@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">TipOut</string>
+    <string name="cost_of_service">Cost Of Service</string>
 </resources>
