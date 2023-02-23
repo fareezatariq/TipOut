@@ -32,13 +32,25 @@
             android:inputType="numberDecimal"
             />
     </com.google.android.material.textfield.TextInputLayout>
-
+<ImageView
+    android:id="@+id/icon_service_question"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:layout_constraintStart_toStartOf="parent"
+    app:srcCompat="@drawable/ic_service"
+    android:layout_marginTop="5dp"
+    android:importantForAccessibility="no"
+    app:layout_constraintTop_toTopOf="@+id/service_question"
+    app:layout_constraintBottom_toBottomOf="@+id/service_question"
+    />
     <TextView
         android:id="@+id/service_question"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/service_question"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintStart_toStartOf="@+id/cost_of_service"
         app:layout_constraintTop_toBottomOf="@id/cost_of_service" />
 
     <RadioGroup
@@ -47,7 +59,7 @@
         android:layout_height="wrap_content"
         android:checkedButton="@id/twenty_percent"
         android:orientation="vertical"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/service_question"
         app:layout_constraintTop_toBottomOf="@id/service_question">
 
         <RadioButton
@@ -68,7 +80,14 @@
             android:layout_height="wrap_content"
             android:text="@string/okay_10" />
     </RadioGroup>
-
+<ImageView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/icon_round_up"
+    app:srcCompat="@drawable/ic_roundup"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="@+id/roundup_switch"
+    app:layout_constraintBottom_toBottomOf="@+id/roundup_switch"/>
     <com.google.android.material.switchmaterial.SwitchMaterial
         android:id="@+id/roundup_switch"
         android:layout_width="0dp"
@@ -77,23 +96,26 @@
         android:minHeight="48dp"
         android:text="@string/roundup_tip"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@id/tip_option"
+        android:layout_marginStart="16dp"
+        app:layout_constraintStart_toEndOf="@id/icon_round_up"
         app:layout_constraintTop_toBottomOf="@id/tip_option" />
 
     <Button
         android:id="@+id/calculate_tip"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:text="@string/calculate"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@id/roundup_switch"
         app:layout_constraintTop_toBottomOf="@id/roundup_switch" />
 
     <TextView
         android:id="@+id/tip_result"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/calculate_tip"
         tools:text="Tip Amount: $10" />
